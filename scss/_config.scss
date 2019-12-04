@@ -1,0 +1,31 @@
+$primary-color:black;//#444;
+$secondary-color:#79c7e6;//#eece1a;
+$show-home-image: true;
+$home-image: url(../img/port-background.jpg);
+$background-opacity: 0.8;
+
+@mixin easeOut{
+    transition: all 0.8s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image{
+        &#bg-img{
+            background: $home-image;
+            background-attachment:fixed;
+            background-size:cover;
+
+            //overlay
+            &:after {
+                content:'';
+                position:absolute;
+                top:0;
+                right:0;
+                width:100%;
+                height:100%;
+                z-index:-1; // pushes the overlay away from you.
+                background:rgba($primary-color,$background-opacity);// rgba allowes us to use an overlay color over background image, we will then have to set the words to be on top of the overlay.
+            }
+        }
+    }
+}
