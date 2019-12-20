@@ -30,6 +30,15 @@ $background-opacity: 0.8;
     }
 }
 
+// // Set Text color to change with background changes;
+// @function set-text-color($color){
+//     @if (lighteness($color) > 40){
+//         @return black;
+//     }@else {
+//         @return white;
+//     }
+// }
+
 // Media Query Mixins, to make site responsive
 @mixin mediaSm{
     @media screen and (max-width:500px){
